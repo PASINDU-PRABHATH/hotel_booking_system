@@ -1,4 +1,12 @@
+
+
+
 import 'package:flutter/material.dart';
+import 'package:hotel_management_app/utility/app_const_data.dart';
+
+import '../utility/app_colors.dart';
+
+import '../widgets/most_relavant_widget.dart';
 
 class DiscoverScreen extends StatefulWidget {
   const DiscoverScreen({super.key});
@@ -11,6 +19,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.backgroundColor,
       body: ListView(
         children: [
           Stack(
@@ -32,7 +41,9 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0,),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20.0,
+                ),
                 child: Column(
                   children: [
                     SizedBox(
@@ -42,25 +53,55 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
-                          
                           children: [
-                            Icon(Icons.location_on_outlined,color: Colors.white,size: 15,),
-                            Text("Colombo",style: TextStyle(color: Colors.white),),
+                            Icon(
+                              Icons.location_on_outlined,
+                              color: Colors.white,
+                              size: 15,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "Colombo",
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ],
                         ),
-                        Icon(Icons.person_outlined,color: Colors.white,),
+                        Icon(
+                          Icons.person_outlined,
+                          color: Colors.white,
+                        ),
                       ],
                     ),
                     SizedBox(
                       height: 15,
-                      
                     ),
-                    Text("Hey, Marting! Tell us where you want to go",style: TextStyle(color: Colors.white,fontSize: 25,fontWeight: FontWeight.bold),),
+                    Text(
+                      "Hey, Marting! Tell us where you want to go",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
               )
             ],
-          )
+          ),
+          const Text("The most relevant"),
+          SizedBox(
+            height: AppConstData.mostRelavantCardHeight,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: const [
+                MostRelaventWidget(),
+                MostRelaventWidget(),
+                MostRelaventWidget(),
+              ],
+            ),
+          ),
+          
         ],
       ),
     );

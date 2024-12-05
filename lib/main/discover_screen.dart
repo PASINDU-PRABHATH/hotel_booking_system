@@ -89,7 +89,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
               )
             ],
           ),
-          const Text("The most relevant"),
+          const Text("The most relevant",style: TextStyle(fontSize: 18,fontWeight:FontWeight.bold),),
           SizedBox(
             height: AppConstData.mostRelavantCardHeight,
             child: ListView(

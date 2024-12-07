@@ -93,6 +93,8 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
           SizedBox(
             height: AppConstData.mostRelavantCardHeight,
             child: ListView(
+
+               
               scrollDirection: Axis.horizontal,
               children: const [
                 MostRelaventWidget(),
